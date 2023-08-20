@@ -49,10 +49,6 @@ async def load_packs(ctx: discord.ApplicationContext, attachment: discord.Attach
         #print(csv)
         await bot.load_packs(ctx, csv)
         await ctx.respond("Successfully added " + str(len(bot.pack_list)) + " packs!")
-        json_file = json.dumps([ob.__dict__ for ob in bot.pack_list])
-        print(json_file)
-        with open('packs.json', 'w') as outfile:
-            outfile.write(json_file)
     else:
         try:
             pack_list = []
