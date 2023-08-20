@@ -266,3 +266,4 @@ class JumpStartManagerBot(discord.Bot):
         with open('packs.json', 'w') as outfile:
             outfile.write(json_file)
         self.support_pack = self.pack_list.pop() # If not using support pack, comment this line out
+        print(self.support_pack.pack_name)

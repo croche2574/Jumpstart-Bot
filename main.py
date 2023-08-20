@@ -58,6 +58,7 @@ async def load_packs(ctx: discord.ApplicationContext, attachment: discord.Attach
                     json_object = json.loads(json_obj, object_hook=Pack.from_json)
                     pack_list.append(json_object)
                     print(pack_list[0])
+                    bot.support_pack = pack_list[0].pop()
                     bot.pack_list = pack_list[0]
                     await ctx.respond("Successfully loaded " + str(len(bot.pack_list)) + " packs from disk!")
         except EnvironmentError:
